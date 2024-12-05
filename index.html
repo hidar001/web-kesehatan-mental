@@ -1,0 +1,1512 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kesehatan Mental - Peduli Diri</title>
+    
+    <!-- CSS -->
+    <link rel="stylesheet" href="assets/css/styles.css">
+    
+    <!-- ScrollReveal -->
+    <script src="https://unpkg.com/scrollreveal@4.0.9/dist/scrollreveal.min.js"></script>
+    <!-- Tambahkan link font baru -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <!-- Tambahkan CSS untuk animasi -->
+    <style>
+        .home__title {
+            font-size: 3.8rem;
+            font-weight: 700;
+            background: linear-gradient(45deg, #ADDDC7, #8EBBA6);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            margin-bottom: 1.5rem;
+            animation: fadeInDown 1s ease-out;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.1);
+        }
+
+        .home__subtitle {
+            font-size: 1.4rem;
+            color: #C2E8D4;
+            margin-bottom: 2rem;
+            animation: fadeInUp 1s ease-out 0.5s;
+            opacity: 0;
+            animation-fill-mode: forwards;
+            font-weight: 500;
+            text-shadow: 1px 1px 2px rgba(0,0,0,0.3);
+            letter-spacing: 1px;
+        }
+
+        .home__subtitle:hover {
+            background: linear-gradient(45deg, #C2E8D4, #ADDDC7);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            transition: all 0.3s ease;
+        }
+
+        .home__description {
+            font-size: 1.2rem;
+            line-height: 1.9;
+            color: #E8F4EE;
+            margin-bottom: 2.5rem;
+            animation: fadeInUp 1s ease-out 0.7s;
+            opacity: 0;
+            animation-fill-mode: forwards;
+            text-shadow: 1px 1px 2px rgba(0,0,0,0.2);
+            background: rgba(0, 0, 0, 0.2);
+            padding: 20px;
+            border-radius: 10px;
+        }
+
+        .home__button {
+            display: inline-block;
+            padding: 1.2rem 2.5rem;
+            background: linear-gradient(45deg, #ADDDC7, #8EBBA6);
+            color: #2C3E50;
+            border-radius: 30px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            animation: fadeInUp 1s ease-out 0.9s;
+            opacity: 0;
+            animation-fill-mode: forwards;
+            letter-spacing: 1px;
+        }
+
+        .home__button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 5px 20px rgba(173, 221, 199, 0.4);
+            background: linear-gradient(45deg, #8EBBA6, #ADDDC7);
+        }
+
+        .highlight {
+            color: #C2E8D4;
+            font-weight: 600;
+            padding: 0 5px;
+            position: relative;
+            z-index: 1;
+        }
+
+        .highlight::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 30%;
+            background-color: rgba(173, 221, 199, 0.2);
+            z-index: -1;
+            transform: skew(-12deg);
+        }
+
+        .home__social-link {
+            color: #E8F4EE;
+            font-size: 1.5rem;
+            margin: 0 15px;
+            transition: all 0.3s ease;
+            opacity: 0.8;
+        }
+
+        .home__social-link:hover {
+            color: #ADDDC7;
+            transform: translateY(-3px);
+            opacity: 1;
+        }
+
+        @keyframes fadeInDown {
+            from {
+                opacity: 0;
+                transform: translateY(-50px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(50px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .home__container {
+            position: relative;
+            z-index: 2;
+        }
+
+        .home__img {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            filter: brightness(0.7) saturate(1.2);
+        }
+
+        .tips__container {
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+        }
+
+        .tips__card {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            padding: 2rem;
+            border-radius: 1rem;
+            text-align: center;
+            transition: all 0.3s ease;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+
+        .tips__card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+        }
+
+        .tips__img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            border-radius: 0.5rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .tips__button {
+            display: inline-flex;
+            align-items: center;
+            padding: 0.75rem 1.5rem;
+            background: linear-gradient(45deg, #2FAD94, #248C77);
+            color: white;
+            border-radius: 25px;
+            margin-top: 1rem;
+            transition: all 0.3s ease;
+            text-decoration: none;
+            font-size: 0.9rem;
+        }
+
+        .tips__button i {
+            margin-left: 0.5rem;
+        }
+
+        .tips__button:hover {
+            background: linear-gradient(45deg, #248C77, #2FAD94);
+            transform: translateX(5px);
+            box-shadow: 0 5px 15px rgba(47, 173, 148, 0.3);
+        }
+
+        /* Modal Styles yang Diperbarui */
+        .modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.8);
+            z-index: 1000;
+            backdrop-filter: blur(8px);
+        }
+
+        .modal__content {
+            position: relative;
+            background: linear-gradient(135deg, rgba(255, 255, 255, 0.9), rgba(255, 255, 255, 0.95));
+            margin: 5% auto;
+            padding: 2.5rem;
+            width: 90%;
+            max-width: 700px;
+            border-radius: 20px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+            animation: modalSlideIn 0.5s ease-out;
+            max-height: 85vh;
+            overflow-y: auto;
+        }
+
+        .modal__close {
+            position: absolute;
+            right: 1.5rem;
+            top: 1.5rem;
+            width: 35px;
+            height: 35px;
+            border-radius: 50%;
+            background: #2FAD94;
+            color: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .modal__close:hover {
+            background: #248C77;
+            transform: rotate(90deg);
+        }
+
+        .modal__title {
+            color: #2C3E50;
+            font-size: 1.8rem;
+            margin-bottom: 2rem;
+            padding-bottom: 1rem;
+            border-bottom: 2px solid #2FAD94;
+        }
+
+        .modal__text {
+            color: #444;
+            line-height: 1.8;
+        }
+
+        .modal__text p {
+            margin-bottom: 1.5rem;
+            font-size: 1.1rem;
+        }
+
+        .modal__text ul {
+            background: rgba(76, 161, 175, 0.1);
+            padding: 1.5rem 2rem;
+            border-radius: 15px;
+            margin-bottom: 1.5rem;
+        }
+
+        .modal__text li {
+            margin-bottom: 0.8rem;
+            position: relative;
+            padding-left: 1.5rem;
+        }
+
+        .modal__text li::before {
+            content: '•';
+            color: #2FAD94;
+            font-size: 1.5rem;
+            position: absolute;
+            left: 0;
+            top: -0.2rem;
+        }
+
+        @keyframes modalSlideIn {
+            from {
+                opacity: 0;
+                transform: translateY(-100px) scale(0.9);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0) scale(1);
+            }
+        }
+
+        /* Custom Scrollbar untuk Modal */
+        .modal__content::-webkit-scrollbar {
+            width: 8px;
+        }
+
+        .modal__content::-webkit-scrollbar-track {
+            background: rgba(0, 0, 0, 0.1);
+            border-radius: 4px;
+        }
+
+        .modal__content::-webkit-scrollbar-thumb {
+            background: #2FAD94;
+            border-radius: 4px;
+        }
+
+        .modal__content::-webkit-scrollbar-thumb:hover {
+            background: #248C77;
+        }
+
+        .symptoms__container {
+            padding: 2rem 0;
+        }
+
+        .symptoms__intro {
+            text-align: center;
+            max-width: 800px;
+            margin: 0 auto 3rem;
+        }
+
+        .symptoms__description {
+            color: #2C3E50;
+            font-size: 1.1rem;
+            line-height: 1.8;
+            font-weight: 500;
+        }
+
+        .symptoms__wrapper {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 1.5rem;
+            padding: 1rem;
+            margin: 0 auto;
+            max-width: 1400px;
+        }
+
+        .symptoms__card {
+            background: white;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s ease;
+            position: relative;
+            min-width: 250px;
+            display: flex;
+            flex-direction: column;
+            height: 100%;
+        }
+
+        .symptoms__card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 40px rgba(76, 161, 175, 0.2);
+        }
+
+        .symptoms__image-wrapper {
+            position: relative;
+            height: 160px;
+            overflow: hidden;
+        }
+
+        .symptoms__img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.3s ease;
+        }
+
+        .symptoms__card:hover .symptoms__img {
+            transform: scale(1.1);
+        }
+
+        .symptoms__overlay {
+            position: absolute;
+            bottom: -30px;
+            right: 20px;
+            width: 60px;
+            height: 60px;
+            background: linear-gradient(45deg, #4CA1AF, #2C3E50);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+        }
+
+        .symptoms__icon {
+            font-size: 1.8rem;
+            color: white;
+        }
+
+        .symptoms__content {
+            padding: 1.5rem;
+            display: flex;
+            flex-direction: column;
+            flex-grow: 1;
+            justify-content: space-between;
+        }
+
+        .symptoms__info {
+            margin-bottom: 1rem;
+        }
+
+        .symptoms__list {
+            margin-bottom: 1.5rem;
+            flex-grow: 1;
+        }
+
+        .symptoms__button {
+            width: 100%;
+            padding: 1rem;
+            background: linear-gradient(45deg, #2FAD94, #248C77);
+            color: white;
+            border: none;
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.5rem;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            margin-top: auto;
+        }
+
+        .symptoms__button:hover {
+            background: linear-gradient(45deg, #248C77, #2FAD94);
+            transform: translateX(5px);
+            box-shadow: 0 5px 15px rgba(47, 173, 148, 0.3);
+        }
+
+        @media screen and (max-width: 1200px) {
+            .symptoms__wrapper {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media screen and (max-width: 768px) {
+            .symptoms__wrapper {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        @media screen and (max-width: 1200px) {
+            .symptoms__container {
+                overflow-x: auto;
+                padding: 1rem 0;
+            }
+            
+            .symptoms__wrapper {
+                min-width: min-content;
+                grid-template-columns: repeat(4, minmax(250px, 1fr));
+                gap: 1rem;
+            }
+        }
+
+        .resources__container {
+            padding: 2rem 0;
+        }
+
+        .resources__filters {
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+            margin-bottom: 3rem;
+            flex-wrap: wrap;
+        }
+
+        .filter-btn {
+            padding: 0.75rem 1.5rem;
+            border: none;
+            background: rgba(47, 173, 148, 0.1);
+            color: #2FAD94;
+            border-radius: 30px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            font-weight: 500;
+        }
+
+        .filter-btn.active,
+        .filter-btn:hover {
+            background: linear-gradient(45deg, #2FAD94, #248C77);
+            color: white;
+            transform: translateY(-3px);
+            box-shadow: 0 5px 15px rgba(47, 173, 148, 0.3);
+        }
+
+        .resources__grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+        }
+
+        .resource__card {
+            background: white;
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s ease;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .resource__card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 40px rgba(76, 161, 175, 0.2);
+        }
+
+        .resource__img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+        }
+
+        .resource__content {
+            padding: 1.5rem;
+            flex-grow: 1;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .resource__tag {
+            display: inline-block;
+            background: rgba(47, 173, 148, 0.1);
+            color: #2FAD94;
+            padding: 0.5rem 1rem;
+            border-radius: 20px;
+            font-size: 0.875rem;
+            margin-bottom: 1rem;
+        }
+
+        .resource__title {
+            color: #2C3E50;
+            font-size: 1.25rem;
+            margin-bottom: 0.75rem;
+            font-weight: 600;
+        }
+
+        .resource__description {
+            color: #666;
+            font-size: 0.9rem;
+            margin-bottom: 1.5rem;
+            flex-grow: 1;
+        }
+
+        .resource__button {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            color: #2FAD94;
+            font-weight: 500;
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+
+        .resource__button:hover {
+            color: #248C77;
+            gap: 0.75rem;
+        }
+
+        .resource__item {
+            opacity: 1;
+            transform: scale(1);
+            transition: all 0.3s ease;
+        }
+
+        .resource__item.hide {
+            display: none;
+            opacity: 0;
+            transform: scale(0.8);
+        }
+
+        /* Button pada symptoms section */
+        .symptoms__button {
+            background: linear-gradient(45deg, #2FAD94, #248C77);
+            color: white;
+            border: none;
+            border-radius: 10px;
+        }
+
+        .symptoms__button:hover {
+            background: linear-gradient(45deg, #248C77, #2FAD94);
+            transform: translateX(5px);
+            box-shadow: 0 5px 15px rgba(47, 173, 148, 0.3);
+        }
+
+        /* Button pada tips section */
+        .tips__button {
+            background: linear-gradient(45deg, #2FAD94, #248C77);
+            color: white;
+        }
+
+        .tips__button:hover {
+            background: linear-gradient(45deg, #248C77, #2FAD94);
+            transform: translateX(5px);
+        }
+
+        /* Filter buttons pada resources section */
+        .filter-btn {
+            background: rgba(47, 173, 148, 0.1);
+            color: #2FAD94;
+        }
+
+        .filter-btn.active,
+        .filter-btn:hover {
+            background: linear-gradient(45deg, #2FAD94, #248C77);
+            color: white;
+            box-shadow: 0 5px 15px rgba(47, 173, 148, 0.3);
+        }
+
+        /* Resource buttons */
+        .resource__button {
+            color: #2FAD94;
+        }
+
+        .resource__button:hover {
+            color: #248C77;
+        }
+
+        .resource__tag {
+            background: rgba(47, 173, 148, 0.1);
+            color: #2FAD94;
+        }
+
+        /* Modal close button */
+        .modal__close {
+            background: #2FAD94;
+        }
+
+        .modal__close:hover {
+            background: #248C77;
+        }
+
+        /* Modal content styling */
+        .modal__title {
+            border-bottom: 2px solid #2FAD94;
+        }
+
+        .modal__text li::before {
+            color: #2FAD94;
+        }
+
+        /* Contact button */
+        .button {
+            background: linear-gradient(45deg, #2FAD94, #248C77);
+            color: white;
+            transition: all 0.3s ease;
+        }
+
+        .button:hover {
+            background: linear-gradient(45deg, #248C77, #2FAD94);
+            transform: translateY(-3px);
+            box-shadow: 0 5px 15px rgba(47, 173, 148, 0.3);
+        }
+
+        /* Custom scrollbar */
+        .modal__content::-webkit-scrollbar-thumb {
+            background: #2FAD94;
+        }
+
+        .modal__content::-webkit-scrollbar-thumb:hover {
+            background: #248C77;
+        }
+
+        .contact__container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+            padding: 4rem 1.5rem;
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 30px;
+            backdrop-filter: blur(10px);
+            margin: 0 auto;
+            max-width: 800px;
+        }
+
+        .contact__description {
+            max-width: 600px;
+            margin: 0 auto 2.5rem;
+            color: #2C3E50;
+            line-height: 1.6;
+            font-size: 1.1rem;
+            font-weight: 500;
+            text-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+        }
+
+        .contact__button {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.8rem;
+            background: linear-gradient(45deg, #25D366, #128C7E);
+            color: white;
+            padding: 1.2rem 2.5rem;
+            border-radius: 50px;
+            font-weight: 600;
+            font-size: 1.1rem;
+            transition: all 0.3s ease;
+            text-decoration: none;
+            border: none;
+            cursor: pointer;
+            box-shadow: 0 4px 15px rgba(37, 211, 102, 0.2);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .contact__button::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(45deg, rgba(255,255,255,0.1), rgba(255,255,255,0.2));
+            border-radius: 50px;
+            transform: translateY(100%);
+            transition: transform 0.6s cubic-bezier(0.23, 1, 0.32, 1);
+        }
+
+        .contact__button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 6px 20px rgba(37, 211, 102, 0.3);
+            background: linear-gradient(45deg, #128C7E, #25D366);
+        }
+
+        .contact__button:hover::before {
+            transform: translateY(0);
+        }
+
+        .contact__button i {
+            font-size: 1.3rem;
+            transition: transform 0.3s ease;
+        }
+
+        .contact__button:hover i {
+            transform: scale(1.1);
+        }
+
+        .section__title {
+            margin-bottom: 1.5rem;
+            color: #2C5E4E;
+            font-size: 2.5rem;
+            text-align: center;
+            font-weight: 700;
+            letter-spacing: -0.5px;
+            background: linear-gradient(45deg, #2C5E4E, #1D4237);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.1);
+        }
+
+        .about__description {
+            max-width: 600px;
+            margin: 0 auto 2rem;
+            color: #2C3E50;
+            line-height: 1.8;
+            font-size: 1.1rem;
+            font-weight: 500;
+        }
+
+        .symptoms__description {
+            color: #2C3E50;
+            font-size: 1.1rem;
+            line-height: 1.8;
+            font-weight: 500;
+        }
+
+        .tips__title {
+            color: #2C5E4E;
+            font-size: 1.8rem;
+            margin-bottom: 1rem;
+            font-weight: 600;
+        }
+
+        .resources__title {
+            color: #2C5E4E;
+            font-size: 1.8rem;
+            margin-bottom: 1rem;
+            font-weight: 600;
+        }
+
+        @media screen and (max-width: 768px) {
+            .contact__container {
+                padding: 3rem 1rem;
+            }
+            
+            .contact__button {
+                padding: 1rem 2rem;
+                font-size: 1rem;
+            }
+            
+            .contact__description {
+                font-size: 1rem;
+                padding: 0 1rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header class="header" id="header">
+        <nav class="nav container">
+            <h1 class="nav__logo">Kesehatan Mental</h1>
+            <div class="nav__menu" id="nav-menu">
+                <ul class="nav__list">
+                    <li class="nav__item">
+                        <a href="#home" class="nav__link active-link">Beranda</a>
+                    </li>
+                    <li class="nav__item">
+                        <a href="#about" class="nav__link">Tentang</a>
+                    </li>
+                    <li class="nav__item">
+                        <a href="#tips" class="nav__link">Tips</a>
+                    </li>
+                    <li class="nav__item">
+                        <a href="#contact" class="nav__link">Kontak</a>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+
+    <main class="main">
+        <!-- Home -->
+        <section class="home section" id="home">
+            <img src="assets/img/home.jpg" alt="background" class="home__img">
+            <div class="home__container container grid">
+                <div class="home__data">
+                    <h1 class="home__title">Kesehatan Mental</h1>
+                    <h3 class="home__subtitle">Membangun Hidup yang Lebih Seimbang</h3>
+                    <p class="home__description">
+                        Setiap langkah menuju <span class="highlight">kesehatan mental</span> adalah 
+                        investasi untuk masa depan yang lebih cerah. Mari mulai perjalanan 
+                        menuju <span class="highlight">kesejahteraan mental</span> bersama kami.
+                    </p>
+                    <a href="#about" class="home__button">
+                        Mulai Perjalanan Anda
+                        <i class="ri-arrow-right-line"></i>
+                    </a>
+                </div>
+
+                <div class="home__social">
+                    <a href="#" class="home__social-link">
+                        <i class="ri-facebook-box-fill"></i>
+                    </a>
+                    <a href="#" class="home__social-link">
+                        <i class="ri-instagram-fill"></i>
+                    </a>
+                    <a href="#" class="home__social-link">
+                        <i class="ri-twitter-fill"></i>
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- About -->
+        <section class="about section" id="about">
+            <div class="about__container container">
+                <h2 class="section__title">Tentang Kesehatan Mental</h2>
+                
+                <div class="about__content grid">
+                    <!-- About Text Column -->
+                    <div class="about__data">
+                        <div class="about__description">
+                            <p class="about__text">
+                                Kesehatan mental sama pentingnya dengan kesehatan fisik. Ini bukan hanya tentang mengatasi masalah, 
+                                tapi juga tentang <span class="highlight">meningkatkan kualitas hidup</span> secara keseluruhan.
+                            </p>
+                            
+                            <div class="about__stats">
+                                <div class="stats__item">
+                                    <h3 class="stats__number">1 dari 4</h3>
+                                    <p class="stats__description">Orang mengalami masalah kesehatan mental setiap tahun</p>
+                                </div>
+                                <div class="stats__item">
+                                    <h3 class="stats__number">50%</h3>
+                                    <p class="stats__description">Masalah mental dimulai sebelum usia 14 tahun</p>
+                                </div>
+                            </div>
+
+                            <div class="about__features">
+                                <div class="feature__item">
+                                    <i class="ri-mental-health-line feature__icon"></i>
+                                    <h4>Dukungan Profesional</h4>
+                                    <p>Konsultasi dengan ahli kesehatan mental berpengalaman</p>
+                                </div>
+                                <div class="feature__item">
+                                    <i class="ri-heart-line feature__icon"></i>
+                                    <h4>Pendekatan Holistik</h4>
+                                    <p>Menangani aspek fisik, mental, dan sosial secara menyeluruh</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- About Images Column -->
+                    <div class="about__images">
+                        <div class="images__container">
+                            <img src="assets/img/about1.jpg" alt="about image" class="about__img-one">
+                            <img src="assets/img/about2.jpg" alt="about image" class="about__img-two">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Update section symptoms -->
+        <section class="symptoms section" id="symptoms">
+            <h2 class="section__title">Kenali Gejala Kesehatan Mental</h2>
+            <div class="symptoms__container container">
+                <div class="symptoms__intro">
+                    <p class="symptoms__description">
+                        Mengenali gejala awal gangguan kesehatan mental sangat penting untuk penanganan yang tepat. 
+                        Berikut adalah empat kategori gejala utama yang perlu Anda waspadai:
+                    </p>
+                </div>
+                
+                <div class="symptoms__wrapper">
+                    <div class="symptoms__card">
+                        <div class="symptoms__image-wrapper">
+                            <img src="assets/img/emotional.jpg" alt="Emotional Symptoms" class="symptoms__img">
+                            <div class="symptoms__overlay">
+                                <i class="ri-mental-health-line symptoms__icon"></i>
+                            </div>
+                        </div>
+                        <div class="symptoms__content">
+                            <div class="symptoms__info">
+                                <h3 class="symptoms__title">Gejala Emosional</h3>
+                                <ul class="symptoms__list">
+                                    <li>Perubahan suasana hati drastis</li>
+                                    <li>Kecemasan berlebihan</li>
+                                    <li>Perasaan sedih berkepanjangan</li>
+                                </ul>
+                            </div>
+                            <button class="symptoms__button" onclick="showSymptomDetail('emotional')">
+                                Pelajari Lebih Lanjut <i class="ri-arrow-right-line"></i>
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Card Gejala Kognitif -->
+                    <div class="symptoms__card">
+                        <div class="symptoms__image-wrapper">
+                            <img src="assets/img/cognitive.jpg" alt="Cognitive Symptoms" class="symptoms__img">
+                            <div class="symptoms__overlay">
+                                <i class="ri-psychotherapy-line symptoms__icon"></i>
+                            </div>
+                        </div>
+                        <div class="symptoms__content">
+                            <div class="symptoms__info">
+                                <h3 class="symptoms__title">Gejala Kognitif</h3>
+                                <ul class="symptoms__list">
+                                    <li>Sulit berkonsentrasi</li>
+                                    <li>Pikiran yang kacau</li>
+                                    <li>Kesulitan membuat keputusan</li>
+                                </ul>
+                            </div>
+                            <button class="symptoms__button" onclick="showSymptomDetail('cognitive')">
+                                Pelajari Lebih Lanjut <i class="ri-arrow-right-line"></i>
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Card Gejala Fisik -->
+                    <div class="symptoms__card">
+                        <div class="symptoms__image-wrapper">
+                            <img src="assets/img/physical.jpg" alt="Physical Symptoms" class="symptoms__img">
+                            <div class="symptoms__overlay">
+                                <i class="ri-heart-pulse-line symptoms__icon"></i>
+                            </div>
+                        </div>
+                        <div class="symptoms__content">
+                            <div class="symptoms__info">
+                                <h3 class="symptoms__title">Gejala Fisik</h3>
+                                <ul class="symptoms__list">
+                                    <li>Gangguan pola tidur</li>
+                                    <li>Perubahan nafsu makan</li>
+                                    <li>Kelelahan berlebihan</li>
+                                </ul>
+                            </div>
+                            <button class="symptoms__button" onclick="showSymptomDetail('physical')">
+                                Pelajari Lebih Lanjut <i class="ri-arrow-right-line"></i>
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Card Gejala Perilaku -->
+                    <div class="symptoms__card">
+                        <div class="symptoms__image-wrapper">
+                            <img src="assets/img/behavioral.jpg" alt="Behavioral Symptoms" class="symptoms__img">
+                            <div class="symptoms__overlay">
+                                <i class="ri-group-line symptoms__icon"></i>
+                            </div>
+                        </div>
+                        <div class="symptoms__content">
+                            <div class="symptoms__info">
+                                <h3 class="symptoms__title">Gejala Perilaku</h3>
+                                <ul class="symptoms__list">
+                                    <li>Menarik diri dari lingkungan</li>
+                                    <li>Perubahan pola tidur</li>
+                                    <li>Perilaku impulsif</li>
+                                </ul>
+                            </div>
+                            <button class="symptoms__button" onclick="showSymptomDetail('behavioral')">
+                                Pelajari Lebih Lanjut <i class="ri-arrow-right-line"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Tips -->
+        <section class="tips section" id="tips">
+            <h2 class="section__title">Tips Kesehatan Mental</h2>
+            <div class="tips__container container grid">
+                <div class="tips__card">
+                    <img src="assets/img/meditation.jpg" alt="Meditasi" class="tips__img">
+                    <h3>Meditasi</h3>
+                    <p>Luangkan waktu 10-15 menit setiap hari untuk menenangkan pikiran</p>
+                    <a href="#" class="tips__button" onclick="showDetail('meditation')">
+                        Pelajari Lebih Lanjut <i class="ri-arrow-right-line"></i>
+                    </a>
+                </div>
+
+                <div class="tips__card">
+                    <img src="assets/img/sleep.jpg" alt="Pola Tidur" class="tips__img">
+                    <h3>Pola Tidur</h3>
+                    <p>Tidur 7-9 jam setiap malam dengan jadwal yang teratur</p>
+                    <a href="#" class="tips__button" onclick="showDetail('sleep')">
+                        Pelajari Lebih Lanjut <i class="ri-arrow-right-line"></i>
+                    </a>
+                </div>
+
+                <div class="tips__card">
+                    <img src="assets/img/exercise.jpg" alt="Olahraga" class="tips__img">
+                    <h3>Olahraga</h3>
+                    <p>Lakukan aktivitas fisik minimal 30 menit setiap hari</p>
+                    <a href="#" class="tips__button" onclick="showDetail('exercise')">
+                        Pelajari Lebih Lanjut <i class="ri-arrow-right-line"></i>
+                    </a>
+                </div>
+
+                <div class="tips__card">
+                    <img src="assets/img/social.jpg" alt="Interaksi Sosial" class="tips__img">
+                    <h3>Interaksi Sosial</h3>
+                    <p>Jalin komunikasi dengan keluarga dan teman terdekat</p>
+                    <a href="#" class="tips__button" onclick="showDetail('social')">
+                        Pelajari Lebih Lanjut <i class="ri-arrow-right-line"></i>
+                    </a>
+                </div>
+
+                <div class="tips__card">
+                    <img src="assets/img/hobby.jpg" alt="Hobi" class="tips__img">
+                    <h3>Kembangkan Hobi</h3>
+                    <p>Luangkan waktu untuk melakukan kegiatan yang Anda sukai</p>
+                    <a href="#" class="tips__button" onclick="showDetail('hobby')">
+                        Pelajari Lebih Lanjut <i class="ri-arrow-right-line"></i>
+                    </a>
+                </div>
+
+                <div class="tips__card">
+                    <img src="assets/img/mindfulness.jpg" alt="Mindfulness" class="tips__img">
+                    <h3>Mindfulness</h3>
+                    <p>Praktikkan kesadaran penuh dalam aktivitas sehari-hari</p>
+                    <a href="#" class="tips__button" onclick="showDetail('mindfulness')">
+                        Pelajari Lebih Lanjut <i class="ri-arrow-right-line"></i>
+                    </a>
+                </div>
+            </div>
+
+            <!-- Modal untuk detail tips -->
+            <div id="tipsModal" class="modal">
+                <div class="modal__content">
+                    <span class="modal__close">&times;</span>
+                    <h2 id="modalTitle" class="modal__title"></h2>
+                    <div id="modalContent" class="modal__text"></div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Resources Section -->
+        <section class="resources section" id="resources">
+            <h2 class="section__title">Pustaka Sumber Daya</h2>
+            <div class="resources__container container">
+                <div class="resources__filters">
+                    <button class="filter-btn active" data-filter="all">Semua</button>
+                    <button class="filter-btn" data-filter="article">Artikel</button>
+                    <button class="filter-btn" data-filter="video">Video</button>
+                    <button class="filter-btn" data-filter="podcast">Podcast</button>
+                </div>
+
+                <div class="resources__grid">
+                    <!-- Artikel -->
+                    <div class="resource__item" data-category="article">
+                        <div class="resource__card">
+                            <img src="assets/img/article1.jpg" alt="Article" class="resource__img">
+                            <div class="resource__content">
+                                <span class="resource__tag">Artikel</span>
+                                <h3 class="resource__title">Mengenal Anxiety Disorder</h3>
+                                <p class="resource__description">
+                                    Memahami gejala dan cara mengatasi gangguan kecemasan dalam kehidupan sehari-hari.
+                                </p>
+                                <a href="https://www.honestdocs.id/anxiety-disorder" 
+                                   class="resource__button" 
+                                   target="_blank" 
+                                   rel="noopener noreferrer">
+                                    Baca Selengkapnya <i class="ri-arrow-right-line"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Video -->
+                    <div class="resource__item" data-category="video">
+                        <div class="resource__card">
+                            <img src="assets/img/video1.jpg" alt="Video" class="resource__img">
+                            <div class="resource__content">
+                                <span class="resource__tag">Video</span>
+                                <h3 class="resource__title">Teknik Meditasi Dasar</h3>
+                                <p class="resource__description">
+                                    Tutorial lengkap teknik meditasi untuk pemula.
+                                </p>
+                                <a href="https://youtu.be/M4iod1TJ6RY?si=FLF8Nid7yCmtoygX" 
+                                   class="resource__button"
+                                   target="_blank" 
+                                   rel="noopener noreferrer">
+                                    Tonton Video <i class="ri-play-circle-line"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Podcast -->
+                    <div class="resource__item" data-category="podcast">
+                        <div class="resource__card">
+                            <img src="assets/img/podcast1.jpg" alt="Podcast" class="resource__img">
+                            <div class="resource__content">
+                                <span class="resource__tag">Podcast</span>
+                                <h3 class="resource__title">Mental Health Talk</h3>
+                                <p class="resource__description">
+                                    Diskusi mendalam tentang kesehatan mental bersama para ahli.
+                                </p>
+                                <a href="https://open.spotify.com/show/3B5gGhRJEHnIeeDUt5jud4?si=bbf47ed6e78a4ff6" 
+                                   class="resource__button"
+                                   target="_blank" 
+                                   rel="noopener noreferrer">
+                                    Dengarkan <i class="ri-headphone-line"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact Section -->
+        <section class="contact section" id="contact">
+            <div class="contact__container container">
+                <h2 class="section__title">Butuh Bantuan?</h2>
+                <p class="contact__description">
+                    Jangan ragu untuk mencari bantuan profesional. Anda tidak sendiri dalam perjalanan ini.
+                </p>
+                <a href="https://wa.me/6285722557691" 
+                   target="_blank" 
+                   rel="noopener noreferrer" 
+                   class="button contact__button">
+                    <i class="ri-whatsapp-line"></i> Hubungi Kami
+                </a>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="footer__container container">
+            <div class="footer__content">
+                <p>© 2024 Kesehatan Mental Indonesia. Semua hak dilindungi.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Main JS -->
+    <script src="assets/js/main.js"></script>
+    <script>
+        const modal = document.getElementById('tipsModal');
+        const modalTitle = document.getElementById('modalTitle');
+        const modalContent = document.getElementById('modalContent');
+        const closeBtn = document.getElementsByClassName('modal__close')[0];
+
+        const tipsDetails = {
+            meditation: {
+                title: 'Manfaat dan Panduan Meditasi',
+                content: `
+                    <p>Meditasi adalah praktik yang telah terbukti bermanfaat untuk kesehatan mental:</p>
+                    <ul>
+                        <li>Mengurangi stres dan kecemasan</li>
+                        <li>Meningkatkan konsentrasi dan fokus</li>
+                        <li>Membantu mengelola emosi dengan lebih baik</li>
+                        <li>Meningkatkan kualitas tidur</li>
+                        <li>Meningkatkan kesadaran diri</li>
+                        <li>Menurunkan tekanan darah</li>
+                        <li>Meningkatkan daya ingat</li>
+                    </ul>
+                    <p>Panduan memulai meditasi:</p>
+                    <ul>
+                        <li>Pilih tempat yang tenang dan nyaman</li>
+                        <li>Atur posisi duduk yang rileks namun tegak</li>
+                        <li>Fokus pada pernapasan Anda</li>
+                        <li>Mulai dengan durasi pendek (5-10 menit)</li>
+                        <li>Gunakan aplikasi meditasi untuk panduan</li>
+                    </ul>
+                    <p>Tips untuk konsisten bermeditasi:</p>
+                    <ul>
+                        <li>Tetapkan waktu khusus setiap hari</li>
+                        <li>Mulai dari hal kecil dan tingkatkan secara bertahap</li>
+                        <li>Bergabung dengan komunitas meditasi</li>
+                        <li>Catat kemajuan dan perasaan Anda</li>
+                        <li>Jangan terlalu keras pada diri sendiri</li>
+                    </ul>
+                `
+            },
+            sleep: {
+                title: 'Panduan Lengkap Pola Tidur Sehat',
+                content: `
+                    <p>Tidur berkualitas adalah fondasi penting untuk kesehatan mental:</p>
+                    <ul>
+                        <li>Meningkatkan daya ingat dan konsentrasi</li>
+                        <li>Memperkuat sistem kekebalan tubuh</li>
+                        <li>Membantu mengatur emosi</li>
+                        <li>Mengurangi risiko depresi</li>
+                        <li>Meningkatkan produktivitas</li>
+                        <li>Membantu pemulihan fisik dan mental</li>
+                    </ul>
+                    <p>Tips menciptakan rutinitas tidur yang sehat:</p>
+                    <ul>
+                        <li>Tidur dan bangun di waktu yang sama setiap hari</li>
+                        <li>Hindari layar elektronik 1-2 jam sebelum tidur</li>
+                        <li>Ciptakan lingkungan tidur yang nyaman dan gelap</li>
+                        <li>Hindari kafein dan alkohol menjelang tidur</li>
+                        <li>Lakukan aktivitas menenangkan sebelum tidur</li>
+                    </ul>
+                    <p>Kebiasaan yang mendukung tidur berkualitas:</p>
+                    <ul>
+                        <li>Olahraga teratur di siang hari</li>
+                        <li>Makan malam minimal 3 jam sebelum tidur</li>
+                        <li>Praktikkan teknik relaksasi sebelum tidur</li>
+                        <li>Gunakan aromaterapi yang menenangkan</li>
+                        <li>Atur suhu ruangan yang nyaman (20-22°C)</li>
+                    </ul>
+                    <p>Hal yang perlu dihindari:</p>
+                    <ul>
+                        <li>Tidur siang terlalu lama (>30 menit)</li>
+                        <li>Mengonsumsi makanan berat sebelum tidur</li>
+                        <li>Mengecek ponsel saat di tempat tidur</li>
+                        <li>Bekerja atau belajar di tempat tidur</li>
+                        <li>Mengonsumsi minuman beralkohol sebagai bantuan tidur</li>
+                    </ul>
+                `
+            },
+            exercise: {
+                title: 'Manfaat Olahraga untuk Kesehatan Mental',
+                content: `
+                    <p>Olahraga teratur tidak hanya baik untuk kesehatan fisik, tetapi juga mental:</p>
+                    <ul>
+                        <li>Melepaskan endorfin yang meningkatkan suasana hati</li>
+                        <li>Mengurangi tingkat stres dan kecemasan</li>
+                        <li>Meningkatkan kualitas tidur</li>
+                        <li>Meningkatkan kepercayaan diri</li>
+                        <li>Membantu mengurangi gejala depresi</li>
+                    </ul>
+                    <p>Tips memulai rutinitas olahraga:</p>
+                    <ul>
+                        <li>Mulai dengan aktivitas ringan seperti jalan kaki</li>
+                        <li>Tentukan jadwal tetap untuk berolahraga</li>
+                        <li>Ajak teman untuk berolahraga bersama</li>
+                        <li>Pilih aktivitas yang Anda nikmati</li>
+                    </ul>
+                `
+            },
+            social: {
+                title: 'Pentingnya Interaksi Sosial',
+                content: `
+                    <p>Manusia adalah makhluk sosial, interaksi yang sehat sangat penting untuk kesejahteraan mental:</p>
+                    <ul>
+                        <li>Memberikan dukungan emosional</li>
+                        <li>Mengurangi perasaan kesepian</li>
+                        <li>Meningkatkan rasa memiliki</li>
+                        <li>Membantu mengatasi stres</li>
+                        <li>Memberikan perspektif baru dalam menghadapi masalah</li>
+                    </ul>
+                    <p>Cara meningkatkan interaksi sosial:</p>
+                    <ul>
+                        <li>Luangkan waktu untuk keluarga dan teman</li>
+                        <li>Bergabung dengan komunitas yang memiliki minat sama</li>
+                        <li>Jadwalkan pertemuan rutin dengan orang terdekat</li>
+                        <li>Terbuka untuk berbagi perasaan dan pengalaman</li>
+                    </ul>
+                `
+            },
+            hobby: {
+                title: 'Mengembangkan Hobi untuk Kesehatan Mental',
+                content: `
+                    <p>Hobi dapat menjadi sarana yang efektif untuk menjaga kesehatan mental:</p>
+                    <ul>
+                        <li>Memberikan kesenangan dan kepuasan pribadi</li>
+                        <li>Meningkatkan kreativitas dan ekspresi diri</li>
+                        <li>Menciptakan rasa pencapaian</li>
+                        <li>Mengurangi stres dan kecemasan</li>
+                        <li>Membangun identitas dan kepercayaan diri</li>
+                    </ul>
+                    <p>Tips mengembangkan hobi:</p>
+                    <ul>
+                        <li>Eksplorasi berbagai aktivitas yang menarik</li>
+                        <li>Luangkan waktu khusus untuk hobi Anda</li>
+                        <li>Bergabung dengan komunitas yang memiliki hobi sama</li>
+                        <li>Jangan terlalu menekan diri untuk sempurna</li>
+                        <li>Nikmati prosesnya, bukan hanya hasilnya</li>
+                    </ul>
+                `
+            },
+            mindfulness: {
+                title: 'Praktik Mindfulness dalam Kehidupan Sehari-hari',
+                content: `
+                    <p>Mindfulness adalah praktik untuk hadir sepenuhnya di saat ini:</p>
+                    <ul>
+                        <li>Mengurangi overthinking dan kecemasan</li>
+                        <li>Meningkatkan fokus dan konsentrasi</li>
+                        <li>Membantu mengelola emosi dengan lebih baik</li>
+                        <li>Meningkatkan kualitas hubungan dengan orang lain</li>
+                        <li>Mengurangi stres dan tekanan mental</li>
+                    </ul>
+                    <p>Cara mempraktikkan mindfulness:</p>
+                    <ul>
+                        <li>Fokus pada pernapasan selama beberapa menit</li>
+                        <li>Makan dengan penuh kesadaran dan tanpa terburu-buru</li>
+                        <li>Perhatikan sensasi fisik saat berjalan</li>
+                        <li>Dengarkan musik tanpa melakukan aktivitas lain</li>
+                        <li>Praktikkan gratitude (rasa syukur) setiap hari</li>
+                    </ul>
+                    <p>Tips untuk pemula:</p>
+                    <ul>
+                        <li>Mulai dengan 5 menit setiap hari</li>
+                        <li>Gunakan aplikasi mindfulness untuk panduan</li>
+                        <li>Buat rutinitas mindfulness yang konsisten</li>
+                        <li>Jangan menghakimi pikiran yang muncul</li>
+                    </ul>
+                `
+            }
+        };
+
+        function showDetail(type) {
+            event.preventDefault(); // Mencegah default action dari link
+            modalTitle.innerHTML = tipsDetails[type].title;
+            modalContent.innerHTML = tipsDetails[type].content;
+            modal.style.display = 'block';
+            document.body.style.overflow = 'hidden'; // Mencegah scroll pada background
+        }
+
+        closeBtn.onclick = function() {
+            modal.style.display = 'none';
+            document.body.style.overflow = 'auto'; // Mengaktifkan kembali scroll
+        }
+
+        window.onclick = function(event) {
+            if (event.target == modal) {
+                modal.style.display = 'none';
+                document.body.style.overflow = 'auto'; // Mengaktifkan kembali scroll
+            }
+        }
+
+        // Tambahkan event listener untuk escape key
+        document.addEventListener('keydown', function(event) {
+            if (event.key === 'Escape' && modal.style.display === 'block') {
+                modal.style.display = 'none';
+                document.body.style.overflow = 'auto';
+            }
+        });
+
+        // Tambahkan ke dalam objek tipsDetails
+        const symptomsDetails = {
+            emotional: {
+                title: 'Memahami Gejala Emosional',
+                content: `
+                    <p>Gejala emosional yang perlu diwaspadai:</p>
+                    <ul>
+                        <li>Perubahan suasana hati yang tiba-tiba dan drastis</li>
+                        <li>Kecemasan yang berlebihan dan terus-menerus</li>
+                        <li>Perasaan sedih atau depresi yang berkepanjangan</li>
+                        <li>Kehilangan minat pada aktivitas yang biasanya disukai</li>
+                        <li>Perasaan putus asa atau tidak berdaya</li>
+                        <li>Mudah tersinggung atau marah tanpa alasan jelas</li>
+                        <li>Kesulitan mengendalikan emosi</li>
+                    </ul>
+                    <p>Kapan harus mencari bantuan:</p>
+                    <ul>
+                        <li>Gejala berlangsung lebih dari 2 minggu</li>
+                        <li>Mengganggu aktivitas sehari-hari</li>
+                        <li>Memengaruhi hubungan dengan orang lain</li>
+                        <li>Muncul pikiran untuk menyakiti diri sendiri</li>
+                    </ul>
+                `
+            },
+            cognitive: {
+                title: 'Gejala Kognitif yang Perlu Diperhatikan',
+                content: `
+                    <p>Tanda-tanda gangguan kognitif meliputi:</p>
+                    <ul>
+                        <li>Kesulitan berkonsentrasi atau fokus</li>
+                        <li>Pikiran yang terus berputar-putar (overthinking)</li>
+                        <li>Masalah dengan memori jangka pendek</li>
+                        <li>Kesulitan dalam pengambilan keputusan</li>
+                        <li>Pola pikir negatif yang berulang</li>
+                        <li>Kesulitan dalam perencanaan atau organisasi</li>
+                    </ul>
+                    <p>Dampak pada kehidupan sehari-hari:</p>
+                    <ul>
+                        <li>Penurunan performa akademik atau kerja</li>
+                        <li>Kesulitan menyelesaikan tugas sederhana</li>
+                        <li>Masalah dalam hubungan sosial</li>
+                        <li>Peningkatan stres dan kecemasan</li>
+                    </ul>
+                `
+            },
+            physical: {
+                title: 'Gejala Fisik Gangguan Mental',
+                content: `
+                    <p>Gejala fisik yang sering muncul:</p>
+                    <ul>
+                        <li>Gangguan pola tidur (insomnia atau hipersomnia)</li>
+                        <li>Perubahan nafsu makan signifikan</li>
+                        <li>Kelelahan kronis tanpa sebab jelas</li>
+                        <li>Sakit kepala atau migrain berulang</li>
+                        <li>Ketegangan otot dan nyeri tubuh</li>
+                        <li>Masalah pencernaan</li>
+                        <li>Jantung berdebar tanpa sebab fisik</li>
+                    </ul>
+                    <p>Langkah penanganan awal:</p>
+                    <ul>
+                        <li>Konsultasi dengan dokter untuk pemeriksaan fisik</li>
+                        <li>Menjaga pola hidup sehat</li>
+                        <li>Olahraga teratur</li>
+                        <li>Istirahat yang cukup</li>
+                    </ul>
+                `
+            },
+            behavioral: {
+                title: 'Perubahan Perilaku yang Perlu Diperhatikan',
+                content: `
+                    <p>Tanda-tanda perubahan perilaku:</p>
+                    <ul>
+                        <li>Menarik diri dari interaksi sosial</li>
+                        <li>Perubahan drastis dalam kebiasaan tidur</li>
+                        <li>Perilaku impulsif atau berisiko</li>
+                        <li>Kesulitan dalam rutinitas sehari-hari</li>
+                        <li>Perubahan signifikan dalam pola makan</li>
+                        <li>Penurunan performa di sekolah atau kerja</li>
+                    </ul>
+                    <p>Cara mendukung orang dengan perubahan perilaku:</p>
+                    <ul>
+                        <li>Tunjukkan empati dan pengertian</li>
+                        <li>Dorong untuk mencari bantuan profesional</li>
+                        <li>Bantu mempertahankan rutinitas sehat</li>
+                        <li>Berikan dukungan tanpa menghakimi</li>
+                    </ul>
+                `
+            }
+        };
+
+        function showSymptomDetail(type) {
+            modalTitle.innerHTML = symptomsDetails[type].title;
+            modalContent.innerHTML = symptomsDetails[type].content;
+            modal.style.display = 'block';
+            document.body.style.overflow = 'hidden';
+        }
+
+        // Filter functionality
+        const filterButtons = document.querySelectorAll('.filter-btn');
+        const resourceItems = document.querySelectorAll('.resource__item');
+
+        filterButtons.forEach(button => {
+            button.addEventListener('click', () => {
+                // Remove active class from all buttons
+                filterButtons.forEach(btn => btn.classList.remove('active'));
+                // Add active class to clicked button
+                button.classList.add('active');
+
+                const filterValue = button.getAttribute('data-filter');
+
+                resourceItems.forEach(item => {
+                    if (filterValue === 'all' || item.getAttribute('data-category') === filterValue) {
+                        item.classList.remove('hide');
+                    } else {
+                        item.classList.add('hide');
+                    }
+                });
+            });
+        });
+    </script>
+    <script src="assets/js/scrollreveal.min.js"></script>
+    <script src="assets/js/main.js"></script>
+</body>
+</html>
